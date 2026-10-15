@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Priyanshu Singh | Backend & Full-Stack Developer</title>
+<meta name="description" content="Priyanshu Singh, backend and full-stack developer. Real-time systems, queues, and well-tested APIs in TypeScript, Node.js, Python and PostgreSQL.">
+<meta property="og:title" content="Priyanshu Singh | Backend & Full-Stack Developer">
+<meta property="og:description" content="Real-time systems, queues, and well-tested APIs, measured with load tests.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07080d">
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top">ps<i>.</i>dev</a>
+  <ul>
+    <li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li><li><a href="#achievements">Achievements</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<main id="top" class="wrap">
+<header class="hero">
+  <span class="pill"><b></b> Graduating 2026 · Open to full-time roles</span>
+  <h1>Hi, I'm <span>Priyanshu Singh.</span></h1>
+  <div class="role" id="role" data-words='["Backend Engineer","Distributed Systems Tinkerer","Full-Stack Developer","Performance Obsessive"]'>Backend Engineer</div>
+  <p class="lead">I build systems that stay correct under failure, then prove it with chaos tests, load tests and CI. Queues, real-time streams and APIs in TypeScript, Node.js and Python.</p>
+  <div class="btns">
+    <a class="btn primary" href="resume.pdf" download>Download Resume</a>
+    <a class="btn" href="https://github.com/priyanshu-48">GitHub</a>
+    <a class="btn" href="https://linkedin.com/in/priyanshusingh84">LinkedIn</a>
+    <a class="btn" href="mailto:priyanshus204@gmail.com">Email me</a>
+  </div>
+  <div class="metrics">
+    <div class="m"><strong data-n="18000" data-suffix="/min">0</strong><span>notifications delivered, 0 lost, 24 ms p95</span></div>
+    <div class="m"><strong data-n="206" data-suffix="x">0</strong><span>faster queries on 1M rows (1,176 → 5.7 ms)</span></div>
+    <div class="m"><strong data-n="986" data-suffix="">0</strong><span>automated tests in one project's CI</span></div>
+    <div class="m"><strong data-n="1915" data-suffix="">0</strong><span>LeetCode rating, Knight, Top 4.26%</span></div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="eyebrow">// selected work</div>
+  <h2>Projects</h2>
+
+  <article class="proj rv">
+    <div class="proj-head">
+      <div><div class="num">01</div><h3>Real-Time Notification Service</h3></div>
+      <div class="proj-links"><a href="https://github.com/priyanshu-48/notification-service">GitHub ↗</a></div>
+    </div>
+    <div class="flow"><span>Client</span><i>→</i><span>Fastify API</span><i>→</i><span class="hl">BullMQ + Redis</span><i>→</i><span>Worker</span><i>→</i><span>Email</span><i>+</i><span>WebSocket</span></div>
+    <ul>
+      <li>Multi-tenant service with <b>22 documented API operations</b> and a WebSocket stream for real-time in-app delivery.</li>
+      <li><b>Crash-safe, at-least-once delivery</b> via idempotency keys and exponential-backoff retries. A chaos test killing a worker mid-send (20 in flight): <b>0 lost, 0 duplicated</b>.</li>
+      <li>k6 load test at <b>18,000 notifications/min, 0 loss, 24 ms p95</b> (local run, mock email).</li>
+      <li><b>86 tests</b> (79.8% coverage), 8 suites on real PostgreSQL/Redis via Testcontainers, in GitHub Actions CI/CD.</li>
+    </ul>
+    <div class="tags"><span>TypeScript</span><span>Node.js</span><span>Fastify</span><span>PostgreSQL</span><span>Redis</span><span>BullMQ</span><span>WebSockets</span><span>React</span><span>Docker</span><span>k6</span></div>
+  </article>
+
+  <article class="proj rv">
+    <div class="proj-head">
+      <div><div class="num">02</div><h3>Distraction Tracker</h3></div>
+      <div class="proj-links"><a href="https://github.com/priyanshu-48/distraction-tracker">GitHub ↗</a></div>
+    </div>
+    <div class="flow"><span>Chrome Extension (MV3)</span><i>→</i><span class="hl">Batched UUID uploads</span><i>→</i><span>Express API</span><i>→</i><span>PostgreSQL</span><i>→</i><span>React dashboard</span></div>
+    <ul>
+      <li>Full-stack browsing-analytics platform. Batched, UUID-deduplicated uploads make <b>retries safe</b>.</li>
+      <li>Analytics queries cut from <b>1,176 ms to 5.7 ms (206x)</b> on 1M rows with a composite index and range-based date filters.</li>
+      <li>Hardened auth: <b>JWT in httpOnly cookies</b>, bcrypt, token revocation, CSRF protection.</li>
+      <li><b>986 automated tests</b>, including a 16-route authorization table, in a 4-job GitHub Actions pipeline.</li>
+    </ul>
+    <div class="tags"><span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>Manifest V3</span><span>Docker</span></div>
+  </article>
+
+  <article class="proj rv">
+    <div class="proj-head">
+      <div><div class="num">03</div><h3>AI Course Generator</h3></div>
+      <div class="proj-links"><a href="https://github.com/priyanshu-48/ai-course-generator">GitHub ↗</a><a href="https://ai-course-generator-wine.vercel.app">Live demo ↗</a></div>
+    </div>
+    <div class="flow"><span>React</span><i>→</i><span>Django REST</span><i>→</i><span class="hl">Redis cache</span><i>→</i><span>Gemini</span><i>+</i><span>28× YouTube (concurrent)</span></div>
+    <ul>
+      <li>Concurrent lookups cut generation latency <b>50%</b> (p50 7.2 s → 3.6 s, simulated APIs; <b>5.3x faster</b> on real YouTube calls).</li>
+      <li>Redis caching removed all 28 YouTube calls on repeat courses. Retries with backoff lifted success under 20% injected failures from <b>81% to 99.5%</b>. Rate limiting and Gemini model fallback for free-tier quotas.</li>
+      <li><b>63 backend tests (94% coverage)</b> and 19 frontend tests in CI. Docker image cut <b>59% (199 → 81 MB)</b>, build time halved.</li>
+    </ul>
+    <div class="tags"><span>Django REST</span><span>React</span><span>MongoDB</span><span>Redis</span><span>Tailwind CSS</span><span>JWT</span><span>Docker</span><span>Gunicorn</span><span>pytest</span><span>Vitest</span></div>
+  </article>
+</section>
+
+<section id="skills">
+  <div class="eyebrow">// toolbox</div>
+  <h2>Skills</h2>
+  <div class="skills rv">
+    <div class="sk"><h4>languages</h4><div><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>C++</span><span>SQL</span><span>Bash</span></div></div>
+    <div class="sk"><h4>databases</h4><div><span>PostgreSQL</span><span>Redis</span><span>MongoDB</span></div></div>
+    <div class="sk"><h4>frameworks &amp; libraries</h4><div><span>Node.js</span><span>Express.js</span><span>Fastify</span><span>React.js</span><span>Django</span><span>Tailwind CSS</span><span>BullMQ</span><span>Drizzle ORM</span></div></div>
+    <div class="sk"><h4>tools, cloud &amp; devops</h4><div><span>Docker</span><span>Docker Compose</span><span>Git</span><span>GitHub Actions</span><span>Render</span><span>Vercel</span><span>Postman</span><span>Vitest</span><span>Testcontainers</span><span>k6</span><span>Claude Code</span></div></div>
+    <div class="sk wide"><h4>concepts</h4><div><span>Data Structures &amp; Algorithms</span><span>OOP</span><span>REST APIs</span><span>WebSockets</span><span>JWT Authentication</span><span>Event-Driven Architecture</span><span>Message Queues</span><span>Unit &amp; Integration Testing</span><span>Cloud Deployment</span></div></div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="eyebrow">// background</div>
+  <h2>Education</h2>
+  <div class="grid3 rv">
+    <div class="edu main"><div><div class="yr">2022 – 2026</div><h4>B.Tech, Electronics &amp; Communication Engineering</h4><p>Vellore Institute of Technology, Vellore</p></div><em>8.39 <small style="font-size:.9rem;color:var(--muted)">/ 10 CGPA</small></em></div>
+    <div class="edu"><div class="yr">2022</div><h4>AISSCE (Class XII)</h4><p>Delhi Public School, Siliguri</p><em>85.2%</em></div>
+    <div class="edu"><div class="yr">2020</div><h4>AISSE (Class X)</h4><p>Delhi Public School, Siliguri</p><em>95.4%</em></div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="eyebrow">// proof of work</div>
+  <h2>Achievements</h2>
+  <div class="ach rv">
+    <div class="a"><b>1915</b><p>LeetCode Knight badge, contest rating 1915, <strong>Top 4.26%</strong>.</p></div>
+    <div class="a"><b>#193</b><p>Rank in LeetCode Biweekly Contest 171, and <strong>#465</strong> in Biweekly Contest 167.</p></div>
+    <div class="a"><b>650+</b><p>DSA problems solved across LeetCode, GeeksforGeeks and other platforms.</p></div>
+    <div class="a"><b>OCI</b><p>Oracle Cloud Infrastructure 2025 <strong>Certified Foundations Associate</strong>.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="cta rv">
+    <div class="eyebrow">// let's talk</div>
+    <h2>Looking for a backend engineer?</h2>
+    <p>I graduate in 2026 and I'm open to full-time roles. The fastest way to reach me is email.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:priyanshus204@gmail.com">priyanshus204@gmail.com</a>
+      <a class="btn" href="resume.pdf" download>Resume PDF</a>
+      <a class="btn" href="https://linkedin.com/in/priyanshusingh84">LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Priyanshu Singh · +91-9064248869</footer>
+
+<script>
+// scroll reveal
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .12 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// nav highlight
+const links = [...document.querySelectorAll('nav ul a')];
+const so = new IntersectionObserver(es => es.forEach(e => e.isIntersecting &&
+  links.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id))), { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('section[id]').forEach(s => so.observe(s));
+
+// metric count-up
+document.querySelectorAll('[data-n]').forEach(el => {
+  const n = +el.dataset.n, sfx = el.dataset.suffix, t0 = performance.now();
+  const tick = t => { const p = Math.min((t - t0) / 1400, 1); el.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))).toLocaleString() + sfx; p < 1 && requestAnimationFrame(tick); };
+  matchMedia('(prefers-reduced-motion: reduce)').matches ? (el.textContent = n.toLocaleString() + sfx) : requestAnimationFrame(tick);
+});
+
+// typing role
+const role = document.getElementById('role'), words = JSON.parse(role.dataset.words);
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let w = 0, c = words[0].length, del = true;
+  setInterval(() => {
+    const word = words[w];
+    if (del) { c--; if (c <= 0) { del = false; w = (w + 1) % words.length; } }
+    else { c++; if (c >= words[w].length) { del = true; c = words[w].length; } }
+    role.textContent = words[w].slice(0, c);
+  }, 70);
+}
+</script>
+</body>
+</html>
